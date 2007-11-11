@@ -5,7 +5,7 @@
 Summary:	PHP extension for expect library
 Name:		php-%{modname}
 Version:	0.2.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/expect
@@ -86,6 +86,17 @@ if [ $1 = 1 ]; then
     %create_ghostfile /var/log/httpd/%{name}.log apache apache 644
 fi
 
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
+
 %clean
 rm -rf %{buildroot}
 
@@ -96,4 +107,3 @@ rm -rf %{buildroot}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
 %ghost %attr(0644,apache,apache) /var/log/httpd/%{name}.log
-
