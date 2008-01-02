@@ -16,6 +16,7 @@ Requires(pre):  apache-mod_php
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	expect-devel
 BuildRequires:	file
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This extension allows to interact with processes through PTY, using expect
