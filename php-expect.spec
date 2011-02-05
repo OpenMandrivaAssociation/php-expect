@@ -4,7 +4,7 @@
 
 Summary:	PHP extension for expect library
 Name:		php-%{modname}
-Version:	0.2.8
+Version:	0.2.9
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
