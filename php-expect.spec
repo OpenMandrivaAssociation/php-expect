@@ -5,7 +5,7 @@
 Summary:	PHP extension for expect library
 Name:		php-%{modname}
 Version:	0.3.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/expect
