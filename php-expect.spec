@@ -8,7 +8,7 @@ Version:	0.3.1
 Release:	%mkrel 3
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/expect
+URL:		https://pecl.php.net/package/expect
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
