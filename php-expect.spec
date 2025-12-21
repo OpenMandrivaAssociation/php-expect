@@ -13,6 +13,11 @@ Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  apache-mod_php
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	expect-devel
 BuildRequires:	file
